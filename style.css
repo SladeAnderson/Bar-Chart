@@ -10,16 +10,37 @@ body {
     justify-content: center;
     height: 100vh;
     overflow: hidden;
+    position: relative;
+}
+
+#chart {
+    position: relative;
+    overflow: hidden;
 }
 
 svg {
+    display: block;
     overflow: hidden;
 }
 
 .bar {
     width: 100px;
-    height: 20px;
-   fill: blue; /* Changed the color to blue */
+    height: 50vh;
+    fill: navy; /* Changed the color to blue */
     margin: 5px;
-    z-index: -1; /* Make them appear under the axes */
+    z-index: 1; /* Ensure bars are above the background */
+    overflow-x: hidden;
+
+
+}
+
+.bar:hover {
+    fill: orange; /* Changed the hover color to orange */
+}
+
+
+.tick {
+    overflow: hidden;
+    text-anchor: end;
+    z-index: 2; /* Ensure ticks are above the background */
 }

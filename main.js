@@ -59,12 +59,14 @@ fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/maste
 
         svg.append("g")
             .attr("id", "x-axis")
+            .attr("class", "tick")
             .attr("transform", "translate(0, " + (height - padding) + ")")
             .call(xAxis);
 
         svg.append("g")
             .attr("id", "y-axis")
             .attr("transform", "translate(" + padding + ", 0)")
+            .attr("class", "tick")
             .call(yAxis);
 
    
