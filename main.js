@@ -21,11 +21,11 @@ fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/maste
 
         const xScale = d3.scaleTime()
             .domain([new Date(d3.min(data.data, d => d[0])), new Date(d3.max(data.data, d => d[0]))])
-            .range([padding, width - padding]);
+            .range([0, 800]);
 
         const yScale = d3.scaleLinear()
             .domain([0, d3.max(data.data, d => d[1])])
-            .range([height - padding, padding]);
+            .range([400, 0]);
 
         const xAxis = d3.axisBottom(xScale);
         const yAxis = d3.axisLeft(yScale);
@@ -35,10 +35,10 @@ fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/maste
             .enter()
             .append("rect")
             .attr("class", "bar")
-            .attr("x", d => xScale(new Date(d[0])))
-            .attr("y", d => yScale(d[1]))
+            .attr("x", (d, i) => xScale(new Date(d[0])))
+            .attr("y", (d,i) => yScale(d[1]))
             .attr("width", (width - 2 * padding) / data.data.length)
-            .attr("height", d => height - padding - yScale(d[1]))
+            .attr("height", d => yScale(d[0]) )
             .attr("data-date", d => d[0])
             .attr("data-gdp", d => d[1])
             .on("mouseover", (event, d) => {
@@ -56,6 +56,7 @@ fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/maste
                     .duration(500)
                     .style("opacity", 0);
             });
+            
 
         svg.append("g")
             .attr("id", "x-axis")
@@ -65,7 +66,7 @@ fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/maste
 
         svg.append("g")
             .attr("id", "y-axis")
-            .attr("transform", "translate(" + padding + ", 0)")
+            .attr("transform", "translate(" + (padding) + ", 0)")
             .attr("class", "tick")
             .call(yAxis);
 

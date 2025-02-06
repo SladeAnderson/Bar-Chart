@@ -9,18 +9,13 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    overflow: hidden;
+    overflow: show;
     position: relative;
 }
 
 #chart {
     position: relative;
-    overflow: hidden;
-}
-
-svg {
-    display: block;
-    overflow: hidden;
+    overflow: show;
 }
 
 .bar {
@@ -29,7 +24,7 @@ svg {
     fill: navy; /* Changed the color to blue */
     margin: 5px;
     z-index: 1; /* Ensure bars are above the background */
-    overflow-x: hidden;
+    overflow-x: show;
 
 
 }
@@ -40,7 +35,7 @@ svg {
 
 
 .tick {
-    overflow: hidden;
+    overflow: show;
     text-anchor: end;
     z-index: 2; /* Ensure ticks are above the background */
 }
