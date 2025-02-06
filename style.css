@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+svg {
+    overflow: hidden;
+}
+
+.bar {
+    width: 100px;
+    height: 20px;
+    background-color: blue; /* Changed the color to blue */
+    margin: 5px;
+    z-index: -1; /* Make them appear under the axes */
+}
