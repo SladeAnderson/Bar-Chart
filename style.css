@@ -18,16 +18,7 @@ body {
     overflow: show;
 }
 
-.bar {
-    width: 100px;
-    height: 50vh;
-    fill: navy; /* Changed the color to blue */
-    margin: 5px;
-    z-index: 1; /* Ensure bars are above the background */
-    overflow-x: show;
 
-
-}
 
 .bar:hover {
     fill: orange; /* Changed the hover color to orange */
